@@ -14,6 +14,7 @@ export default function Home() {
         <p><Link href="/week3">Week 3: The Shopping List Adventure Begins</Link></p>
         <p><Link href="/week4">Week 4: Put It On The List</Link></p>
         <p><Link href="/week5">Week 5: Sorting Out the Sorts</Link></p>
+		<p><Link href="/week6">Week 6: To State Or Not To State</Link></p>
         </div>
     </main>
   )
