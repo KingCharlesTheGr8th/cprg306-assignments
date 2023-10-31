@@ -42,7 +42,37 @@ export default function funnyText()
 		"Good luck comes to those who get some",
 		"Bad luck comes to those who don't get some",
 		"The world will end if you don't get some",
-		"It'd be real cool if you got some"
+		"It'd be real cool if you got some",
+		"It'd be wild if you got some",
+		"Only a fool would not get some",
+		"Praise be those who get",
+		"Live, laugh, love, get some",
+		"Haha what if you got some",
+		"Don't not not not get some",
+		"ERROR: We don't have"
 	]
 return funnyText[Math.floor(Math.random()*funnyText.length)]
+}
+
+export function funnyTextMeal()
+{
+	const funnyTextMeal = [
+		"How about",
+		"Consider",
+		"Thinkin' about",
+		"Sexy people eat",
+		"Dude, make",
+		"You could make",
+		"Now I'm craving",
+		"Today's daily quest: make",
+		"I bet you could make",
+		"DEFINITELY make",
+		"Hungry for",
+		"This could become",
+		"Copilot says we should make",
+		"Pro tip: make",
+		"Hungry? Make",
+		"Imagine if you had"
+	]
+return funnyTextMeal[Math.floor(Math.random()*funnyTextMeal.length)]
 }
