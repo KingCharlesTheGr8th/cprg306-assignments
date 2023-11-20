@@ -1,0 +1,40 @@
+'use client';
+import Item from "./item";
+
+import { useState } from "react";
+
+//import items from "./items.json";
+//items.sort((a, b) => a.name.localeCompare(b.name));
+
+export default function ItemList({ items, onItemSelect })
+{
+    const [sortBy, setSortBy] = useState("name");
+
+    const handleSortName = (event) => {
+        setSortBy("name");
+        items.sort((a, b) => a.name.localeCompare(b.name));
+    };
+    const handleSortCategory = (event) => {
+        setSortBy("category");
+        items.sort((a, b) => a.category.localeCompare(b.category));
+    };
+
+	const handleShowRecipes = (event) => {
+		onItemSelect(event);
+		//alert("item-list.js is thinkin about " + event);
+	}
+    
+    return (
+        <div className="w-{128}">
+		
+        <div className="flex w-full mt-2 p-1">
+        <div className={`${sortBy==='name'?'bg-indigo-200':'bg-indigo-400 hover:bg-indigo-100'} rounded px-2 text-xl border-2 border-solid border-indigo-800 hover:border-indigo-700 grow`}><button onClick={handleSortName}>Sort by name</button></div>
+        <div className={`${sortBy==='category'?'bg-indigo-200':'bg-indigo-400 hover:bg-indigo-100'} rounded px-2 text-xl border-2 border-solid border-indigo-800 hover:border-indigo-700 grow`}><button onClick={handleSortCategory}>Sort by department</button></div>
+        </div>
+		<div className="h-96 overflow-y-auto">
+        {items.map((item) => (
+        <Item name={item.name} quantity={item.quantity} category={item.category} key={item.id} onSelect={handleShowRecipes}/>))}
+		</div>
+        </div>
+    )
+}
